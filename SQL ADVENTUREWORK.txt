@@ -1,0 +1,45 @@
+here are 8 AdventureWorks questions and their corresponding SQL script answers:
+
+1-Question: How many products are there in the AdventureWorks database? Answer:SELECT COUNT(*) AS TotalProducts
+FROM Production.Product;
+
+2-Question: What is the average list price of all products in the AdventureWorks database? Answer:
+
+SELECT AVG(ListPrice) AS AverageListPrice
+FROM Production.Product;
+
+3-Question: How many orders have been placed in the AdventureWorks database? Answer:
+
+SELECT COUNT(*) AS TotalOrders
+FROM Sales.SalesOrderHeader;
+
+4-Question: What is the total sales amount for all orders in the AdventureWorks database? Answer:
+
+SELECT SUM(TotalDue) AS TotalSalesAmount
+FROM Sales.SalesOrderHeader;
+
+5-Question: Which customers have placed the most orders in the AdventureWorks database? Answer:
+
+SELECT TOP 5 CustomerID, COUNT(*) AS TotalOrdersPlaced
+FROM Sales.SalesOrderHeader
+GROUP BY CustomerID
+ORDER BY TotalOrdersPlaced DESC;
+
+6-Question: What is the average order quantity for all orders in the AdventureWorks database? Answer:
+
+SELECT AVG(OrderQty) AS AverageOrderQuantity
+FROM Sales.SalesOrderDetail;
+
+7-Question: Which products have the highest list price in the AdventureWorks database? Answer:
+
+SELECT TOP 5 ProductID, Name, ListPrice
+FROM Production.Product
+ORDER BY ListPrice DESC;
+
+8-Question: How many different product categories are there in the AdventureWorks database? Answer:
+
+SELECT COUNT(DISTINCT ProductCategoryID) AS TotalProductCategories
+FROM Production.ProductSubcategory;
+
+These SQL scripts can be used to retrieve various information from the AdventureWorks database.
+
